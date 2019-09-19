@@ -2,4 +2,36 @@
   background-color: $color-primary;
   grid-column: sidebar-start / sidebar-end; //vasakult kuni paremale
   grid-row: 1 / -1; //ylevalt kuni max alla
+
+  display: flex; //flexbox on väga hea pisikeste asjade liigutamiseks
+  justify-content: center;
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem; //kuna ülemine joon läheb nähtamatuks, siis liigutame alla
+
+  &::before,
+  &::after {
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+
+  &::after {
+    transform: translateY(
+      1.3rem
+    ); //vajalik et tuleks nähtavaks kogu alumine joon, muidu peidus
+  }
 }
